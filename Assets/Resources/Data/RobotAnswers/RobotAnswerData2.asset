@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1e6c4951587c24392d637b9f823ad4, type: 3}
-  m_Name: QuestionConfig
+  m_Script: {fileID: 11500000, guid: b135912d0fb497af8987db253e9ffadd, type: 3}
+  m_Name: RobotAnswerData2
   m_EditorClassIdentifier: 
-  questions:
-  - "Kto by\u0142 papie\u017Cem w 2004 roku?"
-  - "Ile ko\u015Bci ma cz\u0142owiek?"
-  - Czym jest nic?
-  - "Powiedz co\u015B o swojej rodzinie"
+  answer:
+  - "Cz\u0142owiek ma dok\u0142adnie 206 ko\u015Bci."
+  - "Dok\u0142adn\u0105 liczb\u0105 ko\u015Bci u cz\u0142owieka jest 206."

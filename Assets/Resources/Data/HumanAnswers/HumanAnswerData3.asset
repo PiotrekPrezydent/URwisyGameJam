@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1e6c4951587c24392d637b9f823ad4, type: 3}
-  m_Name: QuestionConfig
+  m_Script: {fileID: 11500000, guid: e3922c453689d07c3aad05e6706d22e0, type: 3}
+  m_Name: HumanAnswerData3
   m_EditorClassIdentifier: 
-  questions:
-  - "Kto by\u0142 papie\u017Cem w 2004 roku?"
-  - "Ile ko\u015Bci ma cz\u0142owiek?"
-  - Czym jest nic?
-  - "Powiedz co\u015B o swojej rodzinie"
+  answer:
+  - "Nic to nic, pusto\u015B\u0107, co wi\u0119cej powiedzie\u0107."
+  - To absolutny brak wszystkiego.
+  - To jest liczba 0.

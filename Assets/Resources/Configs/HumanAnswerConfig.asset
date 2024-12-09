@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1e6c4951587c24392d637b9f823ad4, type: 3}
-  m_Name: QuestionConfig
+  m_Script: {fileID: 11500000, guid: 79b9e071b512e7472bf12b79aeb6bffb, type: 3}
+  m_Name: HumanAnswerConfig
   m_EditorClassIdentifier: 
-  questions:
-  - "Kto by\u0142 papie\u017Cem w 2004 roku?"
-  - "Ile ko\u015Bci ma cz\u0142owiek?"
-  - Czym jest nic?
-  - "Powiedz co\u015B o swojej rodzinie"
+  answers:
+  - {fileID: 11400000, guid: 0914fa11a43bc124c9b8e022d6e7df27, type: 2}

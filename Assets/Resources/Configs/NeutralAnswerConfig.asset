@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6237ed4aa63cafdb69954dd54156d9d5, type: 3}
   m_Name: NeutralAnswerConfig
   m_EditorClassIdentifier: 
-  answers: []
+  answers:
+  - {fileID: 11400000, guid: 2366af6e66daa260ca2b13d2b6e6ad7a, type: 2}
+  - {fileID: 11400000, guid: 2e1038eb2cf61f08d8f64a9d73b04480, type: 2}
+  - {fileID: 11400000, guid: 187517ea66f2c6003bf2190e6a0834c2, type: 2}

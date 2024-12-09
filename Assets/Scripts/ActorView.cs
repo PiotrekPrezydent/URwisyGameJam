@@ -45,7 +45,7 @@ public class ActorView : MonoBehaviour
     IEnumerator AfterNoDecision()
     {
         player.HideOpption();
-        while(transform.localScale.sqrMagnitude > 20)
+        while(transform.localScale.sqrMagnitude <200)
         {
             var t = transform.localScale;
             transform.localScale = new Vector3(t.x + 0.2f, t.y + 0.2f, t.z + 0.2f);

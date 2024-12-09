@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3922c453689d07c3aad05e6706d22e0, type: 3}
+  m_Name: HumanAnswerData5
+  m_EditorClassIdentifier: 
+  answer:
+  - "Jestem po prostu cz\u0142owiekiem, ma\u0142\u0105 istot\u0105 w olbrzymim \u015Bwiecie."
+  - "Nale\u017C\u0119 do istot rozumnych kt\xF3rzy tworz\u0105 cywilizacj\u0119 ta
+    zmieniaj\u0105 \u015Bwiat wok\xF3\u0142 siebie."

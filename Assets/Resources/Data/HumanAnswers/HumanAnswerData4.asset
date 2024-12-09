@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3922c453689d07c3aad05e6706d22e0, type: 3}
+  m_Name: HumanAnswerData4
+  m_EditorClassIdentifier: 
+  answer:
+  - "Mam syna, jest ma\u0142ym bandyt\u0105. Ci\u0105g\u0142e rozrabia w szkol\u0119."
+  - "Moi rodzice, s\u0105 ju\u017C bardzo starzy."

@@ -5,5 +5,5 @@ using UnityEngine.UI;
 public class HeadData : ScriptableObject
 {
     [SerializeField]
-    public Texture Texture;
+    public Sprite Texture;
 }

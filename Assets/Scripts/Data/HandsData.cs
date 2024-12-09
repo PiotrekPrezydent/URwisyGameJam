@@ -5,5 +5,5 @@ using UnityEngine.UI;
 public class HandsData : ScriptableObject
 {
     [SerializeField]
-    public Texture Texture;
+    public Sprite Texture;
 }

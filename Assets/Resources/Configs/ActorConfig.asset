@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8493e8c9c2ecf2a4591ed625ede961c9, type: 3}
   m_Name: ActorConfig
   m_EditorClassIdentifier: 
-  HairDatas: []
-  HeadDatas: []
-  HandsDatas: []
-  TorseDatas: []
+  HairDatas:
+  - {fileID: 11400000, guid: 93f7c8a3001b3944aa80006c9c4b462f, type: 2}
+  HeadDatas:
+  - {fileID: 11400000, guid: e17f8b323d6acf1449b303c7e7227d76, type: 2}
+  HandsDatas:
+  - {fileID: 11400000, guid: a115a8368d0e0664eb4b6307909e8816, type: 2}
+  TorseDatas:
+  - {fileID: 11400000, guid: eb6181b12a119884d8ff5fbbc40b3835, type: 2}
+  ActorPrefab: {fileID: 5148225529078195184, guid: e5e1e432fef8af4458363f6db9546856, type: 3}

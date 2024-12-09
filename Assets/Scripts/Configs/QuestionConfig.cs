@@ -4,5 +4,5 @@ using UnityEngine;
 public class QuestionConfig : ScriptableObject
 {
     [SerializeField]
-    QuestionData[] questions;
+    string[] questions;
 }

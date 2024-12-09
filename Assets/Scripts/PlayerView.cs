@@ -29,6 +29,8 @@ public class PlayerView : MonoBehaviour
 
     public HashSet<int> usedIndexes;
 
+    int q1, q2, q3;
+
     private void Awake()
     {
         usedIndexes = new HashSet<int>();
@@ -57,7 +59,7 @@ public class PlayerView : MonoBehaviour
         YesButton.gameObject.SetActive(true);
         NoButton.gameObject.SetActive(true);
 
-        _questions.GetNotUsedQuestions(usedIndexes, out int q1, out int q2, out int q3);
+        _questions.GetNotUsedQuestions(usedIndexes, out q1, out q2, out q3);
 
         Question1.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q1];
         Question2.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q2];

@@ -8,6 +8,8 @@ public class ActorView : MonoBehaviour
     static readonly QuestionConfig _configQuestion;
     static PlayerView player;
 
+    bool isRobot;
+
     [SerializeField]
     SpriteRenderer hairSprite;
 
@@ -30,6 +32,11 @@ public class ActorView : MonoBehaviour
         //zmien sprita wartosci
         StartCoroutine(WalkToMiddleOfScreen());
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerView>();
+
+        float r = Random.Range(0, 10);
+        if (r > 5.0f)
+            isRobot = true;
+
     }
 
 
@@ -74,6 +81,11 @@ public class ActorView : MonoBehaviour
     public void OnNo()
     {
         StartCoroutine (AfterNoDecision());
+    }
+
+    public void ShowAnserw(int q)
+    {
+
     }
 
     private void OnDestroy()

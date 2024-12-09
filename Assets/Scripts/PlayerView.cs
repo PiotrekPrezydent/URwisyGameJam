@@ -1,9 +1,13 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerView : MonoBehaviour
 {
     static readonly ActorConfig _actors;
+
+    static readonly QuestionConfig _questions;
 
     [SerializeField]
     Button YesButton;
@@ -12,6 +16,8 @@ public class PlayerView : MonoBehaviour
     Button NoButton;
 
     ActorView currentActor;
+
+    HashSet<int> usedIndexes;
 
     private void Awake()
     {

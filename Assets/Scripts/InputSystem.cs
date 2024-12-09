@@ -7,6 +7,6 @@ public static class InputSystem
 
     public static void Initialize()
     {
-        Debug.Log(_config == null);
+        //_config.inputAction.FindActionMap();
     }
 }

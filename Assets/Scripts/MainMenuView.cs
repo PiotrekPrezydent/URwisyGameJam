@@ -9,10 +9,14 @@ public class MainMenuView : MonoBehaviour
 
     [SerializeField]
     Button ExitButton;
+
+    [SerializeField] 
+    Button SettingsButton;
     private void Awake()
     {
         StartButton.onClick.AddListener(StartOnClick);
         ExitButton.onClick.AddListener(ExitOnClick);
+        SettingsButton.onClick.AddListener(SettingOnClick);
     }
 
 
@@ -21,6 +25,10 @@ public class MainMenuView : MonoBehaviour
         SceneManager.LoadScene(Constants.GameScene);
     }
 
+    void SettingOnClick()
+    {
+        SceneManager.LoadScene(Constants.SettingsMenu);
+    }
     void ExitOnClick()
     {
 

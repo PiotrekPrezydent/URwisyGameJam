@@ -6,5 +6,5 @@ using UnityEngine;
 public class RobotAnswerConfig : ScriptableObject
 {
     [SerializeField]
-    RobotAnswerData[] answers;
+    public RobotAnswerData[] answers;
 }

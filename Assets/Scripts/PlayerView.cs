@@ -11,6 +11,12 @@ public class PlayerView : MonoBehaviour
     static readonly QuestionConfig _questions;
 
     [SerializeField]
+    public TextMeshProUGUI AnserwText;
+
+    [SerializeField]
+    public TextMeshProUGUI Punkty;
+
+    [SerializeField]
     Button YesButton;
 
     [SerializeField]
@@ -31,6 +37,14 @@ public class PlayerView : MonoBehaviour
 
     int q1, q2, q3;
 
+    int WrongDecisions;
+
+    int CurrentDay;
+
+    public int CurrentDecisions;
+
+    public int DecisionLimit;
+
     private void Awake()
     {
         usedIndexes = new HashSet<int>();
@@ -42,6 +56,10 @@ public class PlayerView : MonoBehaviour
         Question1.gameObject.SetActive(false);
         Question2.gameObject.SetActive(false);
         Question3 .gameObject.SetActive(false);
+        ChangeDay();
+        WrongDecisions = 0;
+        CurrentDay = 0;
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -79,20 +97,52 @@ public class PlayerView : MonoBehaviour
         Question3.gameObject.SetActive(false);
     }
 
+    public void ChangeDay()
+    {
+        CurrentDecisions = 0;
+        DecisionLimit = Random.Range(8, 11);
+        CurrentDay++;
+        if(CurrentDay > 7)
+        {
+            Debug.Log("koniec gry");
+        }
+        //odpalamy plansze ze nastepny dzien
+        Debug.Log("plansza na next day");
+    }
+
+    public void WrongAnserw()
+    {
+        WrongDecisions++;
+        Punkty.text = $"{WrongDecisions}/14";
+        if(WrongDecisions >= 14)
+        {
+            //koniec gry
+            Debug.Log("koniec gry");
+            Application.Quit();
+        }
+
+        //show wrong anserws info
+        Debug.Log("Wrong anserws: " + WrongDecisions);
+
+    }
+
 
     void OnQuestion1Click()
     {
-        Debug.Log("Q1");
+        currentActor.GiveAnserw(q1);
+        Question1.gameObject.SetActive(false);
     }
 
     void OnQuestion2Click()
     {
-        Debug.Log("Q2");
+        currentActor.GiveAnserw(q2);
+        Question2.gameObject.SetActive(false);
     }
 
     void OnQuestion3Click()
     {
-        Debug.Log("Q3");
+        currentActor.GiveAnserw(q3);
+        Question3.gameObject.SetActive(false);
     }
 
     void OnYes()

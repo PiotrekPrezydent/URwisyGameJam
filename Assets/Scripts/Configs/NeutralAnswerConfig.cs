@@ -6,5 +6,5 @@ using UnityEngine;
 public class NeutralAnswerConfig : ScriptableObject
 {
     [SerializeField]
-    NeutralAnswerData[] answers;
+    public NeutralAnswerData[] answers;
 }

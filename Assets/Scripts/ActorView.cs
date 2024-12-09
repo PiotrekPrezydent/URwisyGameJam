@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,10 @@ public class ActorView : MonoBehaviour
     static readonly ActorConfig _config;
     static readonly QuestionConfig _configQuestion;
     static PlayerView player;
+
+    static readonly HumanAnswerConfig humanAnswer;
+    static readonly RobotAnswerConfig robotAnswer;
+    static readonly NeutralAnswerConfig neutralAnswer;
 
     bool isRobot;
 
@@ -75,21 +80,54 @@ public class ActorView : MonoBehaviour
     }
     public void OnYes()
     {
+        player.AnserwText.text = "";
+        if (isRobot)
+            player.WrongAnserw();
         StartCoroutine(AfterYesDecision());
     }
 
     public void OnNo()
     {
+        player.AnserwText.text = "";
+        if(!isRobot)
+            player.WrongAnserw();
         StartCoroutine (AfterNoDecision());
     }
 
-    public void ShowAnserw(int q)
+    public void GiveAnserw(int q)
     {
+        float r = Random.Range(0, 10);
+        string ans = "";
+        if (r > 5)
+        {
+            var data = neutralAnswer.answers[q];
 
+            ans = data.answer[Random.Range(0, data.answer.Length)];
+            player.AnserwText.text = ans;
+            return;
+        }
+        else if (isRobot)
+        {
+            var data = robotAnswer.answers[q];
+            ans = data.answer[Random.Range(0, data.answer.Length)];
+            player.AnserwText.text = ans;
+            return;
+        }
+        else
+        {
+            var data = humanAnswer.answers[q];
+            ans = data.answer[Random.Range(0, data.answer.Length)];
+            player.AnserwText.text = ans;
+            return;
+        }
     }
 
     private void OnDestroy()
     {
+        player.CurrentDecisions++;
+        if (player.CurrentDecisions > player.DecisionLimit)
+            player.ChangeDay();
+
         //replace with plansza next day 
         if(player.usedIndexes.Count+2 < _configQuestion.questions.Length)
             _config.CreateRandomPerson();

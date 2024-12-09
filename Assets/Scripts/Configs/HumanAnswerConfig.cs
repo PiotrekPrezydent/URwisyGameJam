@@ -6,5 +6,5 @@ using UnityEngine;
 public class HumanAnswerConfig : ScriptableObject
 {
     [SerializeField]
-    HumanAnswerData[] answers;
+    public HumanAnswerData[] answers;
 }

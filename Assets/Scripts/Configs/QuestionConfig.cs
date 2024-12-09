@@ -6,7 +6,7 @@ using UnityEngine;
 public class QuestionConfig : ScriptableObject
 {
     [SerializeField]
-    string[] questions;
+    public string[] questions;
 
 
     public void GetNotUsedQuestions(HashSet<int> usedQuestions, out int q1, out int q2, out int q3)
@@ -19,7 +19,7 @@ public class QuestionConfig : ScriptableObject
             q2 = Random.Range(0, questions.Length);
 
         q3 = Random.Range(0, questions.Length);
-        while (usedQuestions.Contains(q1) || q2 == q3)
+        while (usedQuestions.Contains(q1) || q2 == q3 || q3 == q1)
             q3 = Random.Range(0, questions.Length);
     }
 }

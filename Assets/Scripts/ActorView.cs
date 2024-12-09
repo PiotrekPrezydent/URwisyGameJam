@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ActorView : MonoBehaviour
 {
     static readonly ActorConfig _config;
+    static readonly QuestionConfig _configQuestion;
     static PlayerView player;
 
     [SerializeField]
@@ -77,6 +78,10 @@ public class ActorView : MonoBehaviour
 
     private void OnDestroy()
     {
-        _config.CreateRandomPerson();
+        //replace with plansza next day 
+        if(player.usedIndexes.Count+2 < _configQuestion.questions.Length)
+            _config.CreateRandomPerson();
+        else
+            Application.Quit();
     }
 }

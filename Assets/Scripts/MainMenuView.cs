@@ -14,6 +14,7 @@ public class MainMenuView : MonoBehaviour
     Button SettingsButton;
     private void Awake()
     {
+        Debug.Log("awa");
         StartButton.onClick.AddListener(StartOnClick);
         ExitButton.onClick.AddListener(ExitOnClick);
         SettingsButton.onClick.AddListener(SettingOnClick);
@@ -23,6 +24,7 @@ public class MainMenuView : MonoBehaviour
 
     void StartOnClick()
     {
+        Debug.Log("start");
         SceneManager.LoadScene(6);
     }
 

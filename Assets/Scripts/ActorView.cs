@@ -38,15 +38,47 @@ public class ActorView : MonoBehaviour
     int speed = 500;
 
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury
-    public void Initialize(Sprite hair,Sprite head, Sprite torse, Sprite hands,bool isRobot)
+    public void Initialize()
     {
-        hairSprite.sprite = hair;
-        headSprite.sprite = head;
-        torseSprite.sprite = torse;
-        handsSprite.sprite = hands;
-        this.isRobot = isRobot;
         data = _configDocument.dokument[Random.Range(0, _configDocument.dokument.Length)];
-        Debug.Log(data == null);
+
+        if (data.imie.ToLower()[0] == 'n')
+        {
+            this.isRobot = true;
+        }
+        float ran = Random.Range(0, 10f);
+        if (ran > 5)
+        {
+            //take only even
+            hairSprite.sprite = _config.HairDatas[Random.Range(0, _config.HairDatas.Length / 2) * 2].Texture;
+            headSprite.sprite = _config.HeadDatas[Random.Range(0, _config.HeadDatas.Length / 2) * 2].Texture;
+            torseSprite.sprite = _config.TorseDatas[Random.Range(0, _config.TorseDatas.Length / 2) / 2 * 2].Texture;
+
+            if (isRobot)
+            {
+                handsSprite.sprite = _config.HandsDatas[Random.Range(0, _config.HandsDatas.Length)].Texture;
+            }
+            else
+            {
+                handsSprite.sprite = _config.HandsDatas[Random.Range(0, 3)].Texture;
+            }
+        }
+        else
+        {
+            hairSprite.sprite = _config.HairDatas[Random.Range(0, (_config.HairDatas.Length - 1) / 2) * 2 + 1].Texture;
+            headSprite.sprite = _config.HeadDatas[Random.Range(0, (_config.HeadDatas.Length - 1) / 2) * 2 + 1].Texture;
+            torseSprite.sprite = _config.TorseDatas[Random.Range(0, (_config.TorseDatas.Length - 1) / 2) * 2 + 1].Texture;
+
+            if (isRobot)
+            {
+                handsSprite.sprite = _config.HandsDatas[Random.Range(0, _config.HandsDatas.Length)].Texture;
+            }
+            else
+            {
+                handsSprite.sprite = _config.HandsDatas[Random.Range(0, 3)].Texture;
+            }
+        }
+
         hairSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();
 
@@ -128,11 +160,18 @@ public class ActorView : MonoBehaviour
     }
     public void OnShowHand()
     {
+        player.DocumentText.text = "";
         handsSprite.gameObject.SetActive(true);
+    }
+
+    public void HideHand()
+    {
+           handsSprite?.gameObject.SetActive(false);
     }
 
     public void OnShowDocuments()
     {
+        handsSprite.gameObject.SetActive(false);
         player.DocumentText.text = data.id + " " + data.imie + " " + data.nazwisko + "\n"+ data.kraj+" " + data.data_urodzenia + "\n" + data.plec;
     }
 

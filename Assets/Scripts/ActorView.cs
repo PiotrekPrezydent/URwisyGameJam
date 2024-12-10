@@ -42,7 +42,6 @@ public class ActorView : MonoBehaviour
         handsSprite.sprite = hands;
 
         hairSprite.color = Random.ColorHSV();
-        headSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();
         handsSprite.color = Random.ColorHSV(); 
 

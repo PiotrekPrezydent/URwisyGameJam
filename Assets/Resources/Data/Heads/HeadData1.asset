@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78eabbb40270cc74f9cc61d0539e0966, type: 3}
-  m_Name: HeadData
+  m_Name: HeadData1
   m_EditorClassIdentifier: 
-  Texture: {fileID: -5594298457471061168, guid: 4b2153c7d51d1a17e8a135c6bca938fb, type: 3}
+  Texture: {fileID: -7316206184934431851, guid: f306c031148054f439e219ccebe508f9, type: 3}

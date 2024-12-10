@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d9b8081d90d37db181561a3d15c6cbe, type: 2}
   - {fileID: 11400000, guid: 6b096c2a5cdc8ee4e812d1e422b229f2, type: 2}
   HeadDatas:
+  - {fileID: 11400000, guid: 7316b6edc37d1da4faf128583aa1ea15, type: 2}
   - {fileID: 11400000, guid: e17f8b323d6acf1449b303c7e7227d76, type: 2}
   HandsDatas:
   - {fileID: 11400000, guid: a115a8368d0e0664eb4b6307909e8816, type: 2}

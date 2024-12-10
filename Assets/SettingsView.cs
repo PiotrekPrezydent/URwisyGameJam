@@ -24,7 +24,14 @@ public class SettingsView : MonoBehaviour
 
     void Start()
     {
-        SetVolume();
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+            SetVolume();
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +56,7 @@ public class SettingsView : MonoBehaviour
     private void LoadVolume()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("Volume");
-
+        
          SetVolume();
     }
 }

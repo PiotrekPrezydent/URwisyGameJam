@@ -10,6 +10,7 @@ public class EndGameView : MonoBehaviour
     [SerializeField] 
     Button ExitButton;
 
+
     private void Awake()
     {
         MenuButton.onClick.AddListener(MenuOnClick);

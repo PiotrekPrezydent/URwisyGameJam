@@ -9,12 +9,10 @@ public class SettingsView : MonoBehaviour
     Button BackButton;
 
     [SerializeField] 
-    AudioMixer myMixer;
-    
+    Slider soundSlider;
+
     [SerializeField] 
-    Slider volumeSlider;
-    
-    
+    AudioMixer masterMixer;
     
     
     private void Awake()
@@ -24,14 +22,7 @@ public class SettingsView : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
-        {
-            LoadVolume();
-        }
-        else
-        {
-            SetVolume();
-        }
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100));
     }
 
     // Update is called once per frame
@@ -45,18 +36,25 @@ public class SettingsView : MonoBehaviour
         SceneManager.LoadScene(Constants.MainMenuScene);
     }
 
-    public void SetVolume()
+    public void SetVolume(float _value)
     {
-        float volume = volumeSlider.value;
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
-        Debug.Log(volume);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        if (_value < 1)
+        {
+            _value = .001f;
+        }
+
+        RefreshSlider(_value);
+        PlayerPrefs.SetFloat("SavedMasterVolume", _value);
+        masterMixer.SetFloat("MasterVolume", Mathf.Log10(_value / 100) * 20f);
+    }
+    
+    public void SetVolumeFromSlider()
+    {
+        SetVolume(soundSlider.value);
     }
 
-    private void LoadVolume()
+    public void RefreshSlider(float _value)
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        
-         SetVolume();
+        soundSlider.value = _value;
     }
 }

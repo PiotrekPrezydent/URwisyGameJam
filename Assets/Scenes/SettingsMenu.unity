@@ -733,8 +733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackButton: {fileID: 907074453}
-  myMixer: {fileID: 24100000, guid: a11ed6ba8600c45709a5c736f16b251c, type: 2}
-  volumeSlider: {fileID: 1676417144}
+  soundSlider: {fileID: 1676417144}
+  masterMixer: {fileID: 24100000, guid: a11ed6ba8600c45709a5c736f16b251c, type: 2}
 --- !u!82 &405158570
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2741,8 +2741,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 210756636}
   m_HandleRect: {fileID: 820521860}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: 0
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0.622
   m_OnValueChanged:
@@ -2750,7 +2750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 405158569}
         m_TargetAssemblyTypeName: SettingsView, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetVolumeFromSlider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

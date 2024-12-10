@@ -155,23 +155,18 @@ public class PlayerView : MonoBehaviour
     {
         currentActor.GiveAnserw(q1);
         Question1.gameObject.SetActive(false);
-        ShowHandButton.gameObject.SetActive(false);
-        DocumentsButton.gameObject.SetActive(false);
     }
 
     void OnShowHand()
     {
         currentActor.OnShowHand();
-        Question1.gameObject.SetActive(false);
         ShowHandButton.gameObject.SetActive(false);
-        DocumentsButton.gameObject.SetActive(false);
+        // po chwili ręka sie musi schować i jeżeli jest wyświetlany dokument to go zastąpić
     }
 
     void ShowDocuments()
     {
         currentActor.OnShowDocuments();
-        Question1.gameObject.SetActive(false);
-        ShowHandButton.gameObject.SetActive(false);
         DocumentsButton.gameObject.SetActive(false);
     }
 
@@ -184,6 +179,8 @@ public class PlayerView : MonoBehaviour
 
     void OnNo()
     {
+        YesButton.GetComponent<AudioSource>().Play();
+        Debug.Log(YesButton.GetComponent<AudioSource>());
         currentActor.OnNo();
     }
 

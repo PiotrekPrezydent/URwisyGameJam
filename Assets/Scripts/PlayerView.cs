@@ -19,7 +19,10 @@ public class PlayerView : MonoBehaviour
     public TextMeshProUGUI AnserwText;
 
     [SerializeField]
-    public TextMeshProUGUI Punkty;
+    TextMeshProUGUI GoodText;
+
+    [SerializeField]
+    TextMeshProUGUI BadText;
 
     [SerializeField]
     Button YesButton;
@@ -64,6 +67,8 @@ public class PlayerView : MonoBehaviour
 
     int CurrentDay;
 
+    int GoodAnserws;
+
     public int CurrentDecisions;
 
     public int DecisionLimit;
@@ -87,6 +92,7 @@ public class PlayerView : MonoBehaviour
 
         CurrentDay = 1;
         WrongDecisions = 0;
+        GoodAnserws = 0;
         CurrentDecisions = 0;
         DecisionLimit = Random.Range(8, 11);
         _actors.Initialize();
@@ -153,11 +159,16 @@ public class PlayerView : MonoBehaviour
 
         if(WrongDecisions >= 14)
         {
+            BadText.text = $"ILOŚĆ ZŁYCH\r\nODPOWIEDZI: {WrongDecisions}/14";
             SceneManager.LoadScene("EndGameLose");
             Debug.Log("koniec gry");
         }
-        //this is debug only
-        Punkty.text = $"{WrongDecisions}/14";
+    }
+
+    public void GoodAnserw()
+    {
+        GoodAnserws++;
+        GoodText.text = $"ILOŚĆ ZŁYCH\r\nODPOWIEDZI: {GoodAnserws}/14";
     }
 
     public void WrongAnserwHuman() => StartCoroutine(BadDecisionForHuman());

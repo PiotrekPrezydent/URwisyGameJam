@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee727e5c5760fd845933eb6e5316c8fc, type: 3}
-  m_Name: HairData
+  m_Name: HairData4
   m_EditorClassIdentifier: 
-  Texture: {fileID: -5594298457471061168, guid: 2fe7a04787b57e0428b4e01749e3f4e9, type: 3}
+  Texture: {fileID: -1086207392447090945, guid: 09e12c43ee45cf485a58588fc3196632, type: 3}

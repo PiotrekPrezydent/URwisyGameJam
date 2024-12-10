@@ -156,10 +156,9 @@ public class PlayerView : MonoBehaviour
     public void WrongAnserw()
     {
         WrongDecisions++;
-
-        if(WrongDecisions >= 14)
+        BadText.text = $"ILOŚĆ ZŁYCH\r\nODPOWIEDZI: {WrongDecisions}/14";
+        if (WrongDecisions >= 14)
         {
-            BadText.text = $"ILOŚĆ ZŁYCH\r\nODPOWIEDZI: {WrongDecisions}/14";
             SceneManager.LoadScene("EndGameLose");
             Debug.Log("koniec gry");
         }

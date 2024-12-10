@@ -2,20 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 public class SettingsView : MonoBehaviour
 {
     [SerializeField]
     Button BackButton;
-
-    [SerializeField] 
-    AudioMixer myMixer;
-    
-    [SerializeField] 
-    Slider volumeSlider;
-    
-    
-    
     
     private void Awake()
     {
@@ -24,14 +14,7 @@ public class SettingsView : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
-        {
-            LoadVolume();
-        }
-        else
-        {
-            SetVolume();
-        }
+        
     }
 
     // Update is called once per frame
@@ -45,18 +28,5 @@ public class SettingsView : MonoBehaviour
         SceneManager.LoadScene(Constants.MainMenuScene);
     }
 
-    public void SetVolume()
-    {
-        float volume = volumeSlider.value;
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
-        Debug.Log(volume);
-        PlayerPrefs.SetFloat("musicVolume", volume);
-    }
-
-    private void LoadVolume()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        
-         SetVolume();
-    }
+ 
 }

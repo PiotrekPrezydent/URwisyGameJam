@@ -17,6 +17,7 @@ public class MainMenuView : MonoBehaviour
         StartButton.onClick.AddListener(StartOnClick);
         ExitButton.onClick.AddListener(ExitOnClick);
         SettingsButton.onClick.AddListener(SettingOnClick);
+        
     }
 
 

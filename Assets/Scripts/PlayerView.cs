@@ -177,6 +177,8 @@ public class PlayerView : MonoBehaviour
 
     void OnYes()
     {
+        YesButton.GetComponent<AudioSource>().Play();
+        Debug.Log(YesButton.GetComponent<AudioSource>());
         currentActor.OnYes();
     }
 

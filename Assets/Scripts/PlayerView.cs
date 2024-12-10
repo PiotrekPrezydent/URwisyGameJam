@@ -3,6 +3,7 @@ using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerView : MonoBehaviour
 {
@@ -109,7 +110,7 @@ public class PlayerView : MonoBehaviour
         NextDaySceneManager.LoadNextDayScene(CurrentDay);
         if (CurrentDay > 7)
         {
-            //wygrana
+            SceneManager.LoadScene("EndGameWin");
             Debug.Log("koniec gry");
         }
     }
@@ -120,9 +121,8 @@ public class PlayerView : MonoBehaviour
 
         if(WrongDecisions >= 14)
         {
-            //przegrana
+            SceneManager.LoadScene("EndGameLose");
             Debug.Log("koniec gry");
-            Application.Quit();
         }
         //this is debug only
         Punkty.text = $"{WrongDecisions}/14";

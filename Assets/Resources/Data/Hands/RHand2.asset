@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 595d79e77e7807545b409d59d411e21c, type: 3}
-  m_Name: HandsData 3
+  m_Name: RHand2
   m_EditorClassIdentifier: 
-  Texture: {fileID: -7027163695849505074, guid: 28cf00f2dec6c69488bfe4d2d52229ea, type: 3}
+  Texture: {fileID: 5357005990035746724, guid: aa124393d57530846a906e1d8a8b1092, type: 3}

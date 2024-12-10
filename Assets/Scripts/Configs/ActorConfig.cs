@@ -61,12 +61,12 @@ public class ActorConfig : ScriptableObject
             float robot = Random.Range(0, 10f);
             if (robot > 5)
             {
-                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                var hands = HandsDatas[Random.Range(0, 3)].Texture;
                 actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, true);
             }
             else
             {
-                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                var hands = HandsDatas[Random.Range(2, HandsDatas.Length)].Texture;
                 actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, false);
             }
 

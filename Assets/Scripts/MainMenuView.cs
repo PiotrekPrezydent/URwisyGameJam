@@ -31,7 +31,8 @@ public class MainMenuView : MonoBehaviour
     }
     void ExitOnClick()
     {
-
+        Debug.Log("quit");
+        Application.Quit();
     }
 
 

@@ -59,6 +59,7 @@ public class PlayerView : MonoBehaviour
 
         Question1.gameObject.SetActive(false);
         ShowHandButton.gameObject.SetActive(false);
+        DocumentsButton.gameObject.SetActive(false);
 
         CurrentDay = 1;
         WrongDecisions = 0;
@@ -87,7 +88,7 @@ public class PlayerView : MonoBehaviour
 
         _questions.GetNotUsedQuestions(usedIndexes, out q1);
 
-        Question1.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q1];
+        Question1.GetComponentInChildren<TextMeshProUGUI>().text = "Zadaj Pytanie: " + _questions.questions[q1];
 
         Question1.gameObject.SetActive(true);
         ShowHandButton.gameObject.SetActive(true);

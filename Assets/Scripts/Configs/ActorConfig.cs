@@ -34,19 +34,42 @@ public class ActorConfig : ScriptableObject
             //take only even
             var hair = HairDatas[Random.Range(0, HairDatas.Length / 2) * 2].Texture;
             var head = HeadDatas[Random.Range(0, HeadDatas.Length/2)*2].Texture;
-            var hands = HandsDatas[Random.Range(0, HandsDatas.Length/2)*2].Texture;
             var torse = TorseDatas[Random.Range(0, TorseDatas.Length/2)/2*2].Texture;
             var actor = GameObject.Instantiate(ActorPrefab, ActorSpawner.transform);
-            actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands);
+
+            float robot = Random.Range(0, 10f);
+            if(robot > 5)
+            {
+                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, true);
+            }
+            else
+            {
+                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, false);
+            }
+
+                
         }
         else
         {
             var hair = HairDatas[Random.Range(0, (HairDatas.Length-1)/2) * 2 +1].Texture;
             var head = HeadDatas[Random.Range(0, (HeadDatas.Length-1) / 2) * 2+1].Texture;
-            var hands = HandsDatas[Random.Range(0, (HandsDatas.Length-1) / 2) * 2+1].Texture;
             var torse = TorseDatas[Random.Range(0, (TorseDatas.Length-1) / 2) * 2+1].Texture;
             var actor = GameObject.Instantiate(ActorPrefab, ActorSpawner.transform);
-            actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands);
+
+            float robot = Random.Range(0, 10f);
+            if (robot > 5)
+            {
+                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, true);
+            }
+            else
+            {
+                var hands = HandsDatas[Random.Range(0, HandsDatas.Length / 2) * 2].Texture;
+                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, false);
+            }
+
         }
 
 

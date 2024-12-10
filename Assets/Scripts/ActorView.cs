@@ -34,12 +34,13 @@ public class ActorView : MonoBehaviour
     int speed = 500;
 
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury
-    public void Initialize(Sprite hair,Sprite head, Sprite torse, Sprite hands)
+    public void Initialize(Sprite hair,Sprite head, Sprite torse, Sprite hands,bool isRobot)
     {
         hairSprite.sprite = hair;
         headSprite.sprite = head;
         torseSprite.sprite = torse;
         handsSprite.sprite = hands;
+        this.isRobot = isRobot;
 
         hairSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();
@@ -50,9 +51,6 @@ public class ActorView : MonoBehaviour
 
         StartCoroutine(WalkToMiddleOfScreen());
 
-        float r = Random.Range(0, 10);
-        if (r > 5.0f)
-            isRobot = true;
 
     }
 

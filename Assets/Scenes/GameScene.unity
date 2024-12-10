@@ -170,6 +170,7 @@ MonoBehaviour:
   NoButton: {fileID: 2071604716}
   Question1: {fileID: 1629263843}
   ShowHandButton: {fileID: 1767728873}
+  DocumentsButton: {fileID: 1033640436}
   currentActor: {fileID: 0}
   CurrentDecisions: 0
   DecisionLimit: 0
@@ -1114,7 +1115,7 @@ GameObject:
   - component: {fileID: 1033640437}
   - component: {fileID: 1033640436}
   m_Layer: 5
-  m_Name: DocumentButtons
+  m_Name: DocumentButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1852,7 +1853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Q1
+  m_text: 'Zadaj Pytanie:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

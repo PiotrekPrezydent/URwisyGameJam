@@ -34,7 +34,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     Button Question3;
 
-    ActorView currentActor;
+    public ActorView currentActor;
 
     public HashSet<int> usedIndexes;
 
@@ -116,17 +116,15 @@ public class PlayerView : MonoBehaviour
     public void WrongAnserw()
     {
         WrongDecisions++;
-        Punkty.text = $"{WrongDecisions}/14";
+
         if(WrongDecisions >= 14)
         {
             //koniec gry
             Debug.Log("koniec gry");
             Application.Quit();
         }
-
-        //show wrong anserws info
-        Debug.Log("Wrong anserws: " + WrongDecisions);
-
+        //this is debug only
+        Punkty.text = $"{WrongDecisions}/14";
     }
 
 

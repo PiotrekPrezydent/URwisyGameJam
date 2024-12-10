@@ -24,10 +24,11 @@ public class NextDayManager : MonoBehaviour
 
     IEnumerator StartNextDay(int day)
     {
-        Debug.Log("corutine for day: " + day);
         SceneText.text = "Day " + day;
         yield return new WaitForSeconds(1);
         this.gameObject.SetActive(false);
+        if(player.currentActor != null)
+            Destroy(player.currentActor.gameObject);
         _actors.CreateRandomPerson();
     }
 }

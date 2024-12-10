@@ -49,7 +49,7 @@ public class ActorView : MonoBehaviour
     {
         while(transform.position.x < 0)
         {
-            transform.position = new Vector3(transform.position.x+1,0,-1);
+            transform.position = new Vector3(transform.position.x+400 * Time.deltaTime,0,-1);
             yield return null;
         }
         player.ShowOptions(this);
@@ -68,7 +68,12 @@ public class ActorView : MonoBehaviour
         player.CurrentDecisions++;
         if (player.CurrentDecisions > player.DecisionLimit)
             player.ChangeDay();
-        Destroy(gameObject);
+        else
+        {
+            _config.CreateRandomPerson();
+            Destroy(gameObject);
+        }
+
 
     }
     IEnumerator AfterYesDecision()
@@ -76,7 +81,7 @@ public class ActorView : MonoBehaviour
         player.HideOpption();
         while (transform.position.x < 300)
         {
-            transform.position = new Vector3(transform.position.x + 1, 0, -1);
+            transform.position = new Vector3(transform.position.x +400 *Time.deltaTime, 0, -1);
             yield return null;
         }
 
@@ -84,8 +89,12 @@ public class ActorView : MonoBehaviour
         if (player.CurrentDecisions > player.DecisionLimit)
         {
             player.ChangeDay();
-        }else
+        }
+        else
+        {
+            _config.CreateRandomPerson();
             Destroy(gameObject);
+        }
     }
     public void OnYes()
     {
@@ -131,12 +140,4 @@ public class ActorView : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        //replace with plansza next day 
-        if(player.usedIndexes.Count+2 < _configQuestion.questions.Length)
-            _config.CreateRandomPerson();
-        else
-            Application.Quit();
-    }
 }

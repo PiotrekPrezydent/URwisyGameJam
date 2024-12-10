@@ -21,7 +21,6 @@ public class ActorConfig : ScriptableObject
     GameObject ActorSpawner;
 
     
-
     public void Initialize()
     {
         ActorSpawner = GameObject.FindGameObjectWithTag("ActorSpawner");

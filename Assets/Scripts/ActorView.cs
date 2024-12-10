@@ -37,10 +37,24 @@ public class ActorView : MonoBehaviour
 
     int speed = 250;
 
+
+
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury
-    public void Initialize()
+    public void Initialize(bool michalina)
     {
-        data = _configDocument.dokument[Random.Range(0, _configDocument.dokument.Length)];
+        if (michalina)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerView>();
+            MiddleOfScreen = GameObject.FindGameObjectWithTag("Middle");
+            RightOfScreen = GameObject.FindGameObjectWithTag("End");
+            data = _configDocument.dokument[25];
+            StartCoroutine(WalkToMiddleOfScreen());
+            return;
+        }
+        else
+        {
+            data = _configDocument.dokument[Random.Range(0, _configDocument.dokument.Length)];
+        }
 
         if (data.imie.ToLower()[0] == 'n')
         {
@@ -181,7 +195,7 @@ public class ActorView : MonoBehaviour
     public void OnShowDocuments()
     {
         handsSprite.gameObject.SetActive(false);
-        player.DocumentText.text = "ID: " +data.id + "\n" +data.imie + " " + data.nazwisko+"\n"+ "P³eæ: " + data.plec+"\n" +"Data_Urodzenia: " + data.data_urodzenia + "\n" + "Pochodzenie: "+data.kraj;
+        player.DocumentText.text = "ID: " +data.id + "\n" +data.imie + " " + data.nazwisko+"\n"+ "P³eæ: " + data.plec+"\n" +"Data_Urodzenia: " + data.data_urodzenia + "\n" + "Pochodzenie: "+data.kraj + "\nMiasto: "+data.miasto;
     }
 
     public void GiveAnserw(int q)

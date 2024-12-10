@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eventSystem: {fileID: 937367681}
   masterMixer: {fileID: 24100000, guid: a11ed6ba8600c45709a5c736f16b251c, type: 2}
+  soundSlider: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

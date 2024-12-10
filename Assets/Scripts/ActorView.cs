@@ -166,6 +166,10 @@ public class ActorView : MonoBehaviour
             player.WrongAnserwRobot();
             player.WrongAnserw();
         }
+        else
+        {
+            player.GoodAnserw();
+        }
 
         StartCoroutine(AfterYesDecision());
     }
@@ -178,8 +182,12 @@ public class ActorView : MonoBehaviour
             player.WrongAnserwHuman();
             player.WrongAnserw();
         }
+        else
+        {
+            player.GoodAnserw();
+        }
 
-        StartCoroutine (AfterNoDecision());
+        StartCoroutine(AfterNoDecision());
     }
     public void OnShowHand()
     {

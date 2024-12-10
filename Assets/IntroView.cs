@@ -17,9 +17,7 @@ public class IntroView : MonoBehaviour
     }
     private void Start()
     {
-        //pamietaj aby to odkomentowac
-        //StartCoroutine(Intro());
-        StartButtonClick();
+        StartCoroutine(Intro());
     }
 
     IEnumerator Intro()

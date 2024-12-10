@@ -49,9 +49,4 @@ public class ResolutionControl : MonoBehaviour
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

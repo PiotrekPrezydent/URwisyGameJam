@@ -31,6 +31,9 @@ public class ActorView : MonoBehaviour
     [SerializeField]
     SpriteRenderer handsSprite;
 
+    [SerializeField]
+    SpriteRenderer documentsSprite;
+
     int speed = 500;
 
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury

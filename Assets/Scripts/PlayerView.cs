@@ -11,6 +11,9 @@ public class PlayerView : MonoBehaviour
     static readonly QuestionConfig _questions;
 
     [SerializeField]
+    public NextDayManager NextDaySceneManager;
+
+    [SerializeField]
     public TextMeshProUGUI AnserwText;
 
     [SerializeField]
@@ -56,16 +59,17 @@ public class PlayerView : MonoBehaviour
         Question1.gameObject.SetActive(false);
         Question2.gameObject.SetActive(false);
         Question3 .gameObject.SetActive(false);
-        ChangeDay();
+        CurrentDay = 1;
         WrongDecisions = 0;
-        CurrentDay = 0;
+        CurrentDecisions = 0;
+        DecisionLimit = Random.Range(8, 11);
+        _actors.Initialize();
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _actors.Initialize();
-        _actors.CreateRandomPerson();
         Question1.onClick.AddListener(OnQuestion1Click);
         Question2.onClick.AddListener(OnQuestion2Click);
         Question3.onClick.AddListener(OnQuestion3Click);
@@ -102,12 +106,11 @@ public class PlayerView : MonoBehaviour
         CurrentDecisions = 0;
         DecisionLimit = Random.Range(8, 11);
         CurrentDay++;
-        if(CurrentDay > 7)
+        NextDaySceneManager.LoadNextDayScene(CurrentDay);
+        if (CurrentDay > 7)
         {
             Debug.Log("koniec gry");
         }
-        //odpalamy plansze ze nastepny dzien
-        Debug.Log("plansza na next day");
     }
 
     public void WrongAnserw()

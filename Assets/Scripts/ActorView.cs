@@ -64,6 +64,10 @@ public class ActorView : MonoBehaviour
             transform.localScale = new Vector3(t.x + 0.2f, t.y + 0.2f, t.z + 0.2f);
             yield return null;
         }
+
+        player.CurrentDecisions++;
+        if (player.CurrentDecisions > player.DecisionLimit)
+            player.ChangeDay();
         Destroy(gameObject);
 
     }
@@ -75,8 +79,13 @@ public class ActorView : MonoBehaviour
             transform.position = new Vector3(transform.position.x + 1, 0, -1);
             yield return null;
         }
-        Destroy(gameObject);
-        yield return null;
+
+        player.CurrentDecisions++;
+        if (player.CurrentDecisions > player.DecisionLimit)
+        {
+            player.ChangeDay();
+        }else
+            Destroy(gameObject);
     }
     public void OnYes()
     {
@@ -124,10 +133,6 @@ public class ActorView : MonoBehaviour
 
     private void OnDestroy()
     {
-        player.CurrentDecisions++;
-        if (player.CurrentDecisions > player.DecisionLimit)
-            player.ChangeDay();
-
         //replace with plansza next day 
         if(player.usedIndexes.Count+2 < _configQuestion.questions.Length)
             _config.CreateRandomPerson();

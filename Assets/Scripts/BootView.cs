@@ -15,10 +15,6 @@ public class BootView : MonoBehaviour
         DontDestroyOnLoad(_eventSystem);
 
         var load =SceneManager.LoadSceneAsync(Constants.MainMenuScene);
-
-
-
-
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,9 +22,4 @@ public class BootView : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

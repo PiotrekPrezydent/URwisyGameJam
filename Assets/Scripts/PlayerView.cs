@@ -30,10 +30,10 @@ public class PlayerView : MonoBehaviour
     Button Question1;
 
     [SerializeField]
-    Button Question2;
+    Button ShowHandButton;
 
     [SerializeField]
-    Button Question3;
+    Button DocumentsButton;
 
     public ActorView currentActor;
 
@@ -52,14 +52,14 @@ public class PlayerView : MonoBehaviour
     private void Awake()
     {
         usedIndexes = new HashSet<int>();
-        YesButton.onClick.AddListener(OnYes);
-        NoButton.onClick.AddListener(OnNo);
+
+
         YesButton.gameObject.SetActive(false);
         NoButton.gameObject.SetActive(false);
 
         Question1.gameObject.SetActive(false);
-        //Question2.gameObject.SetActive(false);
-        //Question3 .gameObject.SetActive(false);
+        ShowHandButton.gameObject.SetActive(false);
+
         CurrentDay = 1;
         WrongDecisions = 0;
         CurrentDecisions = 0;
@@ -72,6 +72,9 @@ public class PlayerView : MonoBehaviour
     {
         _actors.Initialize();
         Question1.onClick.AddListener(OnQuestion1Click);
+        YesButton.onClick.AddListener(OnYes);
+        NoButton.onClick.AddListener(OnNo);
+        ShowHandButton.onClick.AddListener(OnShowHand);
         //Question2.onClick.AddListener(OnQuestion2Click);
         //Question3.onClick.AddListener(OnQuestion3Click);
     }
@@ -85,12 +88,10 @@ public class PlayerView : MonoBehaviour
         _questions.GetNotUsedQuestions(usedIndexes, out q1);
 
         Question1.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q1];
-        //Question2.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q2];
-        //Question3.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q3];
 
         Question1.gameObject.SetActive(true);
-        //Question2.gameObject.SetActive(true);
-        //Question3.gameObject.SetActive(true);
+        ShowHandButton.gameObject.SetActive(true);
+        DocumentsButton.gameObject.SetActive(true);
     }
 
     public void HideOpption()
@@ -98,8 +99,7 @@ public class PlayerView : MonoBehaviour
         YesButton.gameObject.SetActive(false);
         NoButton.gameObject.SetActive(false);
         Question1.gameObject.SetActive(false);
-        //Question2.gameObject.SetActive(false);
-        //Question3.gameObject.SetActive(false);
+        DocumentsButton.gameObject.SetActive(false);
     }
 
     public void ChangeDay()
@@ -133,19 +133,25 @@ public class PlayerView : MonoBehaviour
     {
         currentActor.GiveAnserw(q1);
         Question1.gameObject.SetActive(false);
+        ShowHandButton.gameObject.SetActive(false);
+        DocumentsButton.gameObject.SetActive(false);
     }
 
-    //void OnQuestion2Click()
-    //{
-    //    currentActor.GiveAnserw(q2);
-    //    Question2.gameObject.SetActive(false);
-    //}
+    void OnShowHand()
+    {
+        currentActor.OnShowHand();
+        Question1.gameObject.SetActive(false);
+        ShowHandButton.gameObject.SetActive(false);
+        DocumentsButton.gameObject.SetActive(false);
+    }
 
-    //void OnQuestion3Click()
-    //{
-    //    currentActor.GiveAnserw(q3);
-    //    Question3.gameObject.SetActive(false);
-    //}
+    void ShowDocuments()
+    {
+        currentActor.OnShowDocuments();
+        Question1.gameObject.SetActive(false);
+        ShowHandButton.gameObject.SetActive(false);
+        DocumentsButton.gameObject.SetActive(false);
+    }
 
     void OnYes()
     {

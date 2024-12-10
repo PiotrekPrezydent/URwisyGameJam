@@ -43,7 +43,6 @@ public class ActorView : MonoBehaviour
 
         hairSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();
-        handsSprite.color = Random.ColorHSV(); 
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerView>();
         MiddleOfScreen = GameObject.FindGameObjectWithTag("Middle");
@@ -125,6 +124,15 @@ public class ActorView : MonoBehaviour
         if(!isRobot)
             player.WrongAnserw();
         StartCoroutine (AfterNoDecision());
+    }
+    public void OnShowHand()
+    {
+        handsSprite.gameObject.SetActive(true);
+    }
+
+    public void OnShowDocuments()
+    {
+
     }
 
     public void GiveAnserw(int q)

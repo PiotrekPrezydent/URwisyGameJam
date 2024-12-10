@@ -22,7 +22,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e17f8b323d6acf1449b303c7e7227d76, type: 2}
   HandsDatas:
   - {fileID: 11400000, guid: a115a8368d0e0664eb4b6307909e8816, type: 2}
-  - {fileID: 11400000, guid: a115a8368d0e0664eb4b6307909e8816, type: 2}
+  - {fileID: 11400000, guid: d840fb245a9249448a682c68e502e3cf, type: 2}
+  - {fileID: 11400000, guid: b9fcde8e3af0469468e4446c35fce163, type: 2}
+  - {fileID: 11400000, guid: 4ecd79d623df83044aba03635a69d32c, type: 2}
+  - {fileID: 11400000, guid: 315e1e1888e40ac4d968ed46e99467df, type: 2}
+  - {fileID: 11400000, guid: 809e6889b738dc045ab4f6806f0d2297, type: 2}
   TorseDatas:
   - {fileID: 11400000, guid: e431520661d71ffaeb520e27055b5f87, type: 2}
   - {fileID: 11400000, guid: 7ed8bb3573f7c263bae8345e010cb1bd, type: 2}

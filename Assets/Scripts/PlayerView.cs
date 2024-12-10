@@ -35,6 +35,9 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     Button DocumentsButton;
 
+    [SerializeField]
+    public TextMeshProUGUI DocumentText;
+
     public ActorView currentActor;
 
     public HashSet<int> usedIndexes;

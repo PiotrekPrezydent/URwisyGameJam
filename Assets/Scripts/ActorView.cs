@@ -8,6 +8,7 @@ public class ActorView : MonoBehaviour
     static readonly ActorConfig _config;
     static readonly QuestionConfig _configQuestion;
     static PlayerView player;
+    static readonly DocumentConfig _configDocument;
 
     static readonly HumanAnswerConfig humanAnswer;
     static readonly RobotAnswerConfig robotAnswer;
@@ -31,8 +32,8 @@ public class ActorView : MonoBehaviour
     [SerializeField]
     SpriteRenderer handsSprite;
 
-    [SerializeField]
-    SpriteRenderer documentsSprite;
+    DocumentData data;
+
 
     int speed = 500;
 
@@ -44,6 +45,7 @@ public class ActorView : MonoBehaviour
         torseSprite.sprite = torse;
         handsSprite.sprite = hands;
         this.isRobot = isRobot;
+        data = _configDocument.dokument[Random.Range(0, _configDocument.dokument.Length)];
 
         hairSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();

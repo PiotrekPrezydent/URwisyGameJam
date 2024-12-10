@@ -28,7 +28,7 @@ public class ActorConfig : ScriptableObject
 
     public void CreateRandomPerson()
     {
-        var hair = HairDatas[Random.Range(0, HeadDatas.Length)].Texture;
+        var hair = HairDatas[Random.Range(0, HairDatas.Length)].Texture;
         var head = HeadDatas[Random.Range(0, HeadDatas.Length)].Texture;
         var hands = HandsDatas[Random.Range(0, HandsDatas.Length)].Texture;
         var torse = TorseDatas[Random.Range(0, TorseDatas.Length)].Texture;

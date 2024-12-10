@@ -1109,6 +1109,7 @@ GameObject:
   - component: {fileID: 1888522062}
   - component: {fileID: 1888522061}
   - component: {fileID: 1888522065}
+  - component: {fileID: 1888522066}
   m_Layer: 5
   m_Name: Canva
   m_TagString: Untagged
@@ -1218,6 +1219,18 @@ MonoBehaviour:
   StartButton: {fileID: 1870317933}
   ExitButton: {fileID: 1927068031}
   SettingsButton: {fileID: 2002213953}
+--- !u!114 &1888522066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888522060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a875cbde2fb764ffd982a84cbe302bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1927068029
 GameObject:
   m_ObjectHideFlags: 0

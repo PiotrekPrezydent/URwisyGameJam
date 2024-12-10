@@ -34,4 +34,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89f0caf84bdf82405b152b2b0b527cdf, type: 2}
   - {fileID: 11400000, guid: e03dc03f4a9766098a1783b7da4b7023, type: 2}
   - {fileID: 11400000, guid: 0e51fe37cdd3d965193433376a15efba, type: 2}
+  DocumentsDatas: []
+  Michalina: {fileID: 3234651022809654409, guid: 1409eac1e207758449cde0142f951640, type: 3}
   ActorPrefab: {fileID: 5148225529078195184, guid: e5e1e432fef8af4458363f6db9546856, type: 3}

@@ -23,7 +23,7 @@ public class MainMenuView : MonoBehaviour
 
     void StartOnClick()
     {
-        SceneManager.LoadScene(Constants.GameScene);
+        SceneManager.LoadScene(6);
     }
 
     void SettingOnClick()

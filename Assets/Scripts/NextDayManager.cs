@@ -41,7 +41,7 @@ public class NextDayManager : MonoBehaviour
     {
         SceneText.text = "Day " + day;
         this.message.text = message;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(3);
         this.gameObject.SetActive(false);
         if(player.currentActor != null)
             Destroy(player.currentActor.gameObject);

@@ -35,7 +35,7 @@ public class ActorView : MonoBehaviour
     DocumentData data;
 
 
-    int speed = 500;
+    int speed = 250;
 
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury
     public void Initialize()
@@ -180,7 +180,7 @@ public class ActorView : MonoBehaviour
     public void OnShowDocuments()
     {
         handsSprite.gameObject.SetActive(false);
-        player.DocumentText.text = data.id + " " + data.imie + " " + data.nazwisko + "\n"+ data.kraj+" " + data.data_urodzenia + "\n" + data.plec;
+        player.DocumentText.text = "ID: " +data.id + "\n" +data.imie + " " + data.nazwisko+"\n"+ "P³eæ: " + data.plec+"\n" +"Data_Urodzenia: " + data.data_urodzenia + "\n" + "Pochodzenie: "+data.kraj;
     }
 
     public void GiveAnserw(int q)

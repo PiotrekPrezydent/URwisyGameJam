@@ -19,6 +19,11 @@ public class ActorConfig : ScriptableObject
     public DocumentData[] DocumentsDatas;
 
     [SerializeField]
+    public GameObject Michalina;
+
+    bool michalinaspawned;
+
+    [SerializeField]
     GameObject ActorPrefab;
 
     GameObject ActorSpawner;
@@ -27,11 +32,22 @@ public class ActorConfig : ScriptableObject
     public void Initialize()
     {
         ActorSpawner = GameObject.FindGameObjectWithTag("ActorSpawner");
+        michalinaspawned = false;
     }
 
     public void CreateRandomPerson()
     {
-        var actor = GameObject.Instantiate(ActorPrefab, ActorSpawner.transform);
-        actor.GetComponent<ActorView>().Initialize();
+        if (!michalinaspawned)
+        {
+            michalinaspawned = true;
+            var actor = GameObject.Instantiate(Michalina, ActorSpawner.transform);
+            actor.GetComponent<ActorView>().Initialize(true);
+        }
+        else
+        {
+            var actor = GameObject.Instantiate(ActorPrefab, ActorSpawner.transform);
+            actor.GetComponent<ActorView>().Initialize(false);
+        }
+
     }
 }

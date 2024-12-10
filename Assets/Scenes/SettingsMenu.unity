@@ -2761,8 +2761,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 405158569}
-        m_TargetAssemblyTypeName: SettingsView, Assembly-CSharp
+      - m_Target: {fileID: 405158571}
+        m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
         m_MethodName: SetVolumeFromSlider
         m_Mode: 1
         m_Arguments:

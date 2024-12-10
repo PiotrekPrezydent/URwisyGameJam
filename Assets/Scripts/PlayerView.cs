@@ -57,8 +57,8 @@ public class PlayerView : MonoBehaviour
         NoButton.gameObject.SetActive(false);
 
         Question1.gameObject.SetActive(false);
-        Question2.gameObject.SetActive(false);
-        Question3 .gameObject.SetActive(false);
+        //Question2.gameObject.SetActive(false);
+        //Question3 .gameObject.SetActive(false);
         CurrentDay = 1;
         WrongDecisions = 0;
         CurrentDecisions = 0;
@@ -71,8 +71,8 @@ public class PlayerView : MonoBehaviour
     {
         _actors.Initialize();
         Question1.onClick.AddListener(OnQuestion1Click);
-        Question2.onClick.AddListener(OnQuestion2Click);
-        Question3.onClick.AddListener(OnQuestion3Click);
+        //Question2.onClick.AddListener(OnQuestion2Click);
+        //Question3.onClick.AddListener(OnQuestion3Click);
     }
 
     public void ShowOptions(ActorView currentActor)
@@ -81,15 +81,15 @@ public class PlayerView : MonoBehaviour
         YesButton.gameObject.SetActive(true);
         NoButton.gameObject.SetActive(true);
 
-        _questions.GetNotUsedQuestions(usedIndexes, out q1, out q2, out q3);
+        _questions.GetNotUsedQuestions(usedIndexes, out q1);
 
         Question1.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q1];
-        Question2.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q2];
-        Question3.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q3];
+        //Question2.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q2];
+        //Question3.GetComponentInChildren<TextMeshProUGUI>().text = _questions.questions[q3];
 
         Question1.gameObject.SetActive(true);
-        Question2.gameObject.SetActive(true);
-        Question3.gameObject.SetActive(true);
+        //Question2.gameObject.SetActive(true);
+        //Question3.gameObject.SetActive(true);
     }
 
     public void HideOpption()
@@ -97,8 +97,8 @@ public class PlayerView : MonoBehaviour
         YesButton.gameObject.SetActive(false);
         NoButton.gameObject.SetActive(false);
         Question1.gameObject.SetActive(false);
-        Question2.gameObject.SetActive(false);
-        Question3.gameObject.SetActive(false);
+        //Question2.gameObject.SetActive(false);
+        //Question3.gameObject.SetActive(false);
     }
 
     public void ChangeDay()
@@ -135,17 +135,17 @@ public class PlayerView : MonoBehaviour
         Question1.gameObject.SetActive(false);
     }
 
-    void OnQuestion2Click()
-    {
-        currentActor.GiveAnserw(q2);
-        Question2.gameObject.SetActive(false);
-    }
+    //void OnQuestion2Click()
+    //{
+    //    currentActor.GiveAnserw(q2);
+    //    Question2.gameObject.SetActive(false);
+    //}
 
-    void OnQuestion3Click()
-    {
-        currentActor.GiveAnserw(q3);
-        Question3.gameObject.SetActive(false);
-    }
+    //void OnQuestion3Click()
+    //{
+    //    currentActor.GiveAnserw(q3);
+    //    Question3.gameObject.SetActive(false);
+    //}
 
     void OnYes()
     {

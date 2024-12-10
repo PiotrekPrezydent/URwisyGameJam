@@ -13,6 +13,10 @@ public class ActorView : MonoBehaviour
     static readonly RobotAnswerConfig robotAnswer;
     static readonly NeutralAnswerConfig neutralAnswer;
 
+    GameObject MiddleOfScreen;
+
+    GameObject RightOfScreen;
+
     bool isRobot;
 
     [SerializeField]
@@ -27,6 +31,8 @@ public class ActorView : MonoBehaviour
     [SerializeField]
     SpriteRenderer handsSprite;
 
+    int speed = 500;
+
     //Najwyzej przerobic jak jpg/png niebedzie sie lapac w tekstury
     public void Initialize(Sprite hair,Sprite head, Sprite torse, Sprite hands)
     {
@@ -34,9 +40,11 @@ public class ActorView : MonoBehaviour
         headSprite.sprite = head;
         torseSprite.sprite = torse;
         handsSprite.sprite = hands;
-        //zmien sprita wartosci
-        StartCoroutine(WalkToMiddleOfScreen());
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerView>();
+        MiddleOfScreen = GameObject.FindGameObjectWithTag("Middle");
+        RightOfScreen = GameObject.FindGameObjectWithTag("End");
+
+        StartCoroutine(WalkToMiddleOfScreen());
 
         float r = Random.Range(0, 10);
         if (r > 5.0f)
@@ -47,9 +55,10 @@ public class ActorView : MonoBehaviour
 
     IEnumerator WalkToMiddleOfScreen()
     {
-        while(transform.position.x < 0)
+        while(transform.position.x < MiddleOfScreen.transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x+400 * Time.deltaTime,0,-1);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, MiddleOfScreen.transform.position, step);
             yield return null;
         }
         player.ShowOptions(this);
@@ -79,9 +88,10 @@ public class ActorView : MonoBehaviour
     IEnumerator AfterYesDecision()
     {
         player.HideOpption();
-        while (transform.position.x < 300)
+        while (transform.position.x < RightOfScreen.transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x +400 *Time.deltaTime, 0, -1);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, RightOfScreen.transform.position, step);
             yield return null;
         }
 

@@ -287,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 5148225529078195184}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6525303, y: -0.014520421, z: 0.016821023}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -309,6 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd54e8fd10b4a3b40b1018822e2ce6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MiddleOfScreen: {fileID: 0}
+  RightOfScreen: {fileID: 0}
   hairSprite: {fileID: 1420255390658668955}
   headSprite: {fileID: 8630050089579053803}
   torseSprite: {fileID: 7374909734618217524}

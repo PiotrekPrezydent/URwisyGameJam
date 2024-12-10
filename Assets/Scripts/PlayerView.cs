@@ -79,6 +79,7 @@ public class PlayerView : MonoBehaviour
         YesButton.onClick.AddListener(OnYes);
         NoButton.onClick.AddListener(OnNo);
         ShowHandButton.onClick.AddListener(OnShowHand);
+        DocumentsButton.onClick.AddListener(ShowDocuments);
         //Question2.onClick.AddListener(OnQuestion2Click);
         //Question3.onClick.AddListener(OnQuestion3Click);
     }

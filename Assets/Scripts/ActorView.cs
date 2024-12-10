@@ -46,7 +46,7 @@ public class ActorView : MonoBehaviour
         handsSprite.sprite = hands;
         this.isRobot = isRobot;
         data = _configDocument.dokument[Random.Range(0, _configDocument.dokument.Length)];
-
+        Debug.Log(data == null);
         hairSprite.color = Random.ColorHSV();
         torseSprite.color = Random.ColorHSV();
 
@@ -55,8 +55,6 @@ public class ActorView : MonoBehaviour
         RightOfScreen = GameObject.FindGameObjectWithTag("End");
 
         StartCoroutine(WalkToMiddleOfScreen());
-
-
     }
 
 
@@ -135,7 +133,7 @@ public class ActorView : MonoBehaviour
 
     public void OnShowDocuments()
     {
-
+        player.DocumentText.text = data.id + " " + data.imie + " " + data.nazwisko + "\n"+ data.kraj+" " + data.data_urodzenia + "\n" + data.plec;
     }
 
     public void GiveAnserw(int q)

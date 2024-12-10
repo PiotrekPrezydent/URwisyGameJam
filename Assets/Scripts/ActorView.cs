@@ -40,6 +40,12 @@ public class ActorView : MonoBehaviour
         headSprite.sprite = head;
         torseSprite.sprite = torse;
         handsSprite.sprite = hands;
+
+        hairSprite.color = Random.ColorHSV();
+        headSprite.color = Random.ColorHSV();
+        torseSprite.color = Random.ColorHSV();
+        handsSprite.color = Random.ColorHSV(); 
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerView>();
         MiddleOfScreen = GameObject.FindGameObjectWithTag("Middle");
         RightOfScreen = GameObject.FindGameObjectWithTag("End");

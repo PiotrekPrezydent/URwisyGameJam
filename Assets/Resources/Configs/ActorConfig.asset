@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: ActorConfig
   m_EditorClassIdentifier: 
   HairDatas:
-  - {fileID: 11400000, guid: 93f7c8a3001b3944aa80006c9c4b462f, type: 2}
+  - {fileID: 11400000, guid: 3bc886eb521529d5799360ce3b912da9, type: 2}
+  - {fileID: 11400000, guid: 654afdc53b72340c39c2af61856c691b, type: 2}
+  - {fileID: 11400000, guid: 4d9b8081d90d37db181561a3d15c6cbe, type: 2}
+  - {fileID: 11400000, guid: 6b096c2a5cdc8ee4e812d1e422b229f2, type: 2}
   HeadDatas:
   - {fileID: 11400000, guid: e17f8b323d6acf1449b303c7e7227d76, type: 2}
   HandsDatas:
   - {fileID: 11400000, guid: a115a8368d0e0664eb4b6307909e8816, type: 2}
   TorseDatas:
-  - {fileID: 11400000, guid: eb6181b12a119884d8ff5fbbc40b3835, type: 2}
+  - {fileID: 11400000, guid: e431520661d71ffaeb520e27055b5f87, type: 2}
+  - {fileID: 11400000, guid: 7ed8bb3573f7c263bae8345e010cb1bd, type: 2}
+  - {fileID: 11400000, guid: c178d41547577a5c1895ee20a5cf4803, type: 2}
+  - {fileID: 11400000, guid: 89f0caf84bdf82405b152b2b0b527cdf, type: 2}
+  - {fileID: 11400000, guid: e03dc03f4a9766098a1783b7da4b7023, type: 2}
+  - {fileID: 11400000, guid: 0e51fe37cdd3d965193433376a15efba, type: 2}
   ActorPrefab: {fileID: 5148225529078195184, guid: e5e1e432fef8af4458363f6db9546856, type: 3}

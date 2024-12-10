@@ -16,6 +16,9 @@ public class ActorConfig : ScriptableObject
     public TorseData[] TorseDatas;
 
     [SerializeField]
+    public DocumentData[] DocumentsDatas;
+
+    [SerializeField]
     GameObject ActorPrefab;
 
     GameObject ActorSpawner;
@@ -62,7 +65,7 @@ public class ActorConfig : ScriptableObject
             if (robot > 5)
             {
                 var hands = HandsDatas[Random.Range(0, 3)].Texture;
-                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands, true);
+                actor.GetComponent<ActorView>().Initialize(hair, head, torse, hands,true);
             }
             else
             {

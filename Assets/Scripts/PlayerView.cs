@@ -109,6 +109,7 @@ public class PlayerView : MonoBehaviour
         NextDaySceneManager.LoadNextDayScene(CurrentDay);
         if (CurrentDay > 7)
         {
+            //wygrana
             Debug.Log("koniec gry");
         }
     }
@@ -119,7 +120,7 @@ public class PlayerView : MonoBehaviour
 
         if(WrongDecisions >= 14)
         {
-            //koniec gry
+            //przegrana
             Debug.Log("koniec gry");
             Application.Quit();
         }

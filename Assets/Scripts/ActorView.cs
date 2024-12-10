@@ -18,7 +18,7 @@ public class ActorView : MonoBehaviour
 
     GameObject RightOfScreen;
 
-    bool isRobot;
+    public bool isRobot;
 
     [SerializeField]
     SpriteRenderer hairSprite;
@@ -147,15 +147,23 @@ public class ActorView : MonoBehaviour
     {
         player.AnserwText.text = "";
         if (isRobot)
+        {
+            player.WrongAnserwRobot();
             player.WrongAnserw();
+        }
+
         StartCoroutine(AfterYesDecision());
     }
 
     public void OnNo()
     {
         player.AnserwText.text = "";
-        if(!isRobot)
+        if (!isRobot)
+        {
+            player.WrongAnserwHuman();
             player.WrongAnserw();
+        }
+
         StartCoroutine (AfterNoDecision());
     }
     public void OnShowHand()

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerView : MonoBehaviour
 {
@@ -43,6 +44,12 @@ public class PlayerView : MonoBehaviour
 
     [SerializeField]
     Button HumanDocuments;
+
+    [SerializeField]
+    TextMeshProUGUI WrongDecisionForHuman;
+
+    [SerializeField]
+    TextMeshProUGUI WrongDecisionForRobot;
 
     [SerializeField]
     public TextMeshProUGUI DocumentText;
@@ -153,6 +160,10 @@ public class PlayerView : MonoBehaviour
         Punkty.text = $"{WrongDecisions}/14";
     }
 
+    public void WrongAnserwHuman() => StartCoroutine(BadDecisionForHuman());
+
+    public void WrongAnserwRobot() => StartCoroutine(BadDecisionForRobot());
+
 
     void OnQuestion1Click()
     {
@@ -179,6 +190,7 @@ public class PlayerView : MonoBehaviour
         Debug.Log(YesButton.GetComponent<AudioSource>());
         DocumentText.text = "";
         currentActor.HideHand();
+        disableAllCheck();
         currentActor.OnYes();
     }
 
@@ -188,9 +200,18 @@ public class PlayerView : MonoBehaviour
         Debug.Log(YesButton.GetComponent<AudioSource>());
         DocumentText.text = "";
         currentActor.HideHand();
+        disableAllCheck();
         currentActor.OnNo();
     }
-
+    void disableAllCheck()
+    {
+        HumanLooks = true;
+        HumanSpeak = true;
+        HumanDocs = true;
+        OnLookButtonClick();
+        OnSpeakButtonClick();
+        OnDocumentsButtonClick();
+    }
     void OnLookButtonClick(){
 
         HumanLooks = !HumanLooks;
@@ -220,5 +241,19 @@ public class PlayerView : MonoBehaviour
         }else{
             HumanDocuments.GetComponent<Image>().color = new Color32(255,0,0,255);
         }
+    }
+
+    IEnumerator BadDecisionForHuman()
+    {
+        WrongDecisionForHuman.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        WrongDecisionForHuman.gameObject.SetActive(false);
+    }
+
+    IEnumerator BadDecisionForRobot()
+    {
+        WrongDecisionForRobot.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        WrongDecisionForRobot.gameObject.SetActive(false);
     }
 }

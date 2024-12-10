@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595d79e77e7807545b409d59d411e21c, type: 3}
   m_Name: HandsData
   m_EditorClassIdentifier: 
-  Texture: {fileID: -5594298457471061168, guid: 2fe7a04787b57e0428b4e01749e3f4e9, type: 3}
+  Texture: {fileID: -5594298457471061168, guid: 4b2153c7d51d1a17e8a135c6bca938fb, type: 3}

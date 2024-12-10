@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 19
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Nandros
+  nazwisko: Programatov
+  id: 68185467765
+  data_urodzenia: 2450-06-04
+  kraj: Nagendia
+  miasto: Nautilia
+  plec: "m\u0119\u017Cczyzna"

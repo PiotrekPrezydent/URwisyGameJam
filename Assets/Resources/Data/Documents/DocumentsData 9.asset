@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 9
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Trurl
+  nazwisko: Neuralov
+  id: 36909621902
+  data_urodzenia: 2447-10-07
+  kraj: Nagendia
+  miasto: Nargol
+  plec: kobieta

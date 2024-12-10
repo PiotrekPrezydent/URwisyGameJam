@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 21
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Netronik
+  nazwisko: Bitinski
+  id: 39209168052
+  data_urodzenia: 2450-03-01
+  kraj: Nebulon
+  miasto: Nemor
+  plec: "m\u0119\u017Cczyzna"

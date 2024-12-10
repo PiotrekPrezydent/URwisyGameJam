@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 10
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Sargento
+  nazwisko: Machinov
+  id: 30247339058
+  data_urodzenia: 2354-11-24
+  kraj: Natrionia
+  miasto: Nargol
+  plec: "m\u0119\u017Cczyzna"

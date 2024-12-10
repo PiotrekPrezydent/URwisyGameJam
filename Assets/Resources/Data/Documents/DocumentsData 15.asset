@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 15
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Borowicz
+  nazwisko: Zerowicz
+  id: 77808376280
+  data_urodzenia: 2365-10-14
+  kraj: Naxonia
+  miasto: Nexis
+  plec: kobieta

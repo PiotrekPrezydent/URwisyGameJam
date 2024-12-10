@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 24
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Oleksij
+  nazwisko: Nawrocki
+  id: 57918316302
+  data_urodzenia: 2372-06-19
+  kraj: Neolopolis
+  miasto: Neolopolis
+  plec: "m\u0119\u017Cczyzna"

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ee1fb3e7f8c153ae254557942d6d9, type: 3}
   m_Name: DocumentsData 20
   m_EditorClassIdentifier: 
-  imie: 
-  nazwisko: 
-  id: 
-  data_urodzenia: 
-  kraj: 
-  miasto: 
-  plec: 
+  imie: Netronik
+  nazwisko: Programatov
+  id: 55184010965
+  data_urodzenia: 2416-07-01
+  kraj: Natrionia
+  miasto: Natrix
+  plec: kobieta

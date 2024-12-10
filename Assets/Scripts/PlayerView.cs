@@ -36,6 +36,15 @@ public class PlayerView : MonoBehaviour
     Button DocumentsButton;
 
     [SerializeField]
+    Button LooksLikeHuman;
+
+    [SerializeField]
+    Button SpeaksLikeHuman;
+
+    [SerializeField]
+    Button HumanDocuments;
+
+    [SerializeField]
     public TextMeshProUGUI DocumentText;
 
     public ActorView currentActor;
@@ -51,6 +60,11 @@ public class PlayerView : MonoBehaviour
     public int CurrentDecisions;
 
     public int DecisionLimit;
+
+
+    bool HumanLooks = false;
+    bool HumanSpeak = false;
+    bool HumanDocs = false;
 
     private void Awake()
     {
@@ -82,6 +96,9 @@ public class PlayerView : MonoBehaviour
         DocumentsButton.onClick.AddListener(ShowDocuments);
         //Question2.onClick.AddListener(OnQuestion2Click);
         //Question3.onClick.AddListener(OnQuestion3Click);
+        LooksLikeHuman.onClick.AddListener(OnLookButtonClick);
+        SpeaksLikeHuman.onClick.AddListener(OnSpeakButtonClick);
+        HumanDocuments.onClick.AddListener(OnDocumentsButtonClick);
     }
 
     public void ShowOptions(ActorView currentActor)
@@ -166,5 +183,36 @@ public class PlayerView : MonoBehaviour
     void OnNo()
     {
         currentActor.OnNo();
+    }
+
+    void OnLookButtonClick(){
+
+        HumanLooks = !HumanLooks;
+        Debug.Log(HumanLooks);
+        if(HumanLooks){
+            LooksLikeHuman.GetComponent<Image>().color = new Color32(0,255,0,255);
+        }else{
+            LooksLikeHuman.GetComponent<Image>().color = new Color32(255,0,0,255);
+        }
+    }
+
+    void OnSpeakButtonClick(){
+
+        HumanSpeak = !HumanSpeak;
+        if(HumanSpeak){
+            SpeaksLikeHuman.GetComponent<Image>().color = new Color32(0,255,0,255);
+        }else{
+            SpeaksLikeHuman.GetComponent<Image>().color = new Color32(255,0,0,255);
+        }
+    }
+
+    void OnDocumentsButtonClick(){
+
+        HumanDocs = !HumanDocs;
+        if(HumanDocs){
+            HumanDocuments.GetComponent<Image>().color = new Color32(0,255,0,255);
+        }else{
+            HumanDocuments.GetComponent<Image>().color = new Color32(255,0,0,255);
+        }
     }
 }

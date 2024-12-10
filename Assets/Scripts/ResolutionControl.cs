@@ -28,7 +28,6 @@ public class ResolutionControl : MonoBehaviour
                 filteredResolutions.Add(resolutions[i]);
             }
         }
-
         List<string> options = new List<string>();
         for (int i = 0; i < filteredResolutions.Count; i++)
         {

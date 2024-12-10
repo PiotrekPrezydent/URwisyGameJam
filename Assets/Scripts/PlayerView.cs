@@ -83,6 +83,8 @@ public class PlayerView : MonoBehaviour
         CurrentDecisions = 0;
         DecisionLimit = Random.Range(8, 11);
         _actors.Initialize();
+        AnserwText.text = "";
+        DocumentText.text = "";
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -121,6 +123,7 @@ public class PlayerView : MonoBehaviour
         YesButton.gameObject.SetActive(false);
         NoButton.gameObject.SetActive(false);
         Question1.gameObject.SetActive(false);
+        ShowHandButton.gameObject.SetActive(false);
         DocumentsButton.gameObject.SetActive(false);
     }
 
@@ -174,6 +177,8 @@ public class PlayerView : MonoBehaviour
     {
         YesButton.GetComponent<AudioSource>().Play();
         Debug.Log(YesButton.GetComponent<AudioSource>());
+        DocumentText.text = "";
+        currentActor.HideHand();
         currentActor.OnYes();
     }
 
@@ -181,6 +186,8 @@ public class PlayerView : MonoBehaviour
     {
         YesButton.GetComponent<AudioSource>().Play();
         Debug.Log(YesButton.GetComponent<AudioSource>());
+        DocumentText.text = "";
+        currentActor.HideHand();
         currentActor.OnNo();
     }
 
